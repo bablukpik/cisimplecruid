@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller{
     function __construct()
@@ -23,7 +24,13 @@ class User extends CI_Controller{
      */
     function add()
     {   
-        if(isset($_POST) && count($_POST) > 0)     
+        $this->load->library('form_validation');
+
+		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('name','Name','required');
+		$this->form_validation->set_rules('email','Email','required');
+		
+		if($this->form_validation->run())     
         {   
             $params = array(
 				'password' => $this->input->post('password'),
@@ -52,7 +59,14 @@ class User extends CI_Controller{
         
         if(isset($data['user']['user_id']))
         {
-            if(isset($_POST) && count($_POST) > 0)     
+            $this->load->library('form_validation');
+
+			$this->form_validation->set_rules('password','Password','required');
+			$this->form_validation->set_rules('name','Name','required');
+			$this->form_validation->set_rules('email','Email','required');
+			$this->form_validation->set_rules('photo','Photo','required');
+		
+			if($this->form_validation->run())     
             {   
                 $params = array(
 					'password' => $this->input->post('password'),

@@ -120,7 +120,7 @@
             </div>
             <!-- /.content-wrapper -->
             <footer class="main-footer">
-                <strong>CRUID Project</strong>
+                <strong>Bablu Ahmed</strong>
             </footer>
 
             <!-- Control Sidebar -->

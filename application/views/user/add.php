@@ -6,7 +6,7 @@
             </div>
             <?php echo form_open('user/add'); ?>
           	<div class="box-body">
-          		
+          		<?php echo validation_errors(); ?>
             	<div class="row clearfix">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<label for="password" class="control-label">Password</label>
